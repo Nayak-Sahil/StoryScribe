@@ -1,28 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Package2, PenTool } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 export default function Navbar() {
-  const [navActionBtnName, setNavActionBtnName] = useState("Login");
+  const [navActionBtn, setNavActionBtn] = useState({title: "Login", url: "/auth/login/"});
+  const location = useLocation();
 
   useEffect(() => {
-    let url = window.location.href;
-    if (url.endsWith("/login")) {
-      setNavActionBtnName("Get Started");
+    if (location.pathname.endsWith("/login")) {
+      setNavActionBtn({title: "Get Started", url: "/auth/register"});
+    }else{
+      setNavActionBtn({title: "Login", url: "/auth/login"});
     }
-  }, []);
+  }, [location]);
 
   return (
     <header className="w-full justify-between sticky top-0 flex h-16 items-center gap-4 bg-background px-4 md:px-6 shadow-sm border border-gray-200">
       <div className="order-1 flex justify-center">
         <Link
           href="#"
-          className="flex items-center gap-1 text-lg font-semibold md:text-base"
+          className="w-max flex items-center gap-1 text-lg font-semibold md:text-base"
         >
-          <PenTool className="h-5 w-5 -rotate-90" />
-          <p className="">StoryScribe</p>
+          <Logo />
         </Link>
       </div>
       <nav className="order-2 w-full hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:justify-center md:gap-5 md:text-sm lg:gap-6">
@@ -73,7 +75,9 @@ export default function Navbar() {
         </SheetContent>
       </Sheet>
       <div className="order-3 flex w-max items-center gap-4 md:ml-auto md:gap-2 lg:gap-4">
-        <Button variant="outline">{navActionBtnName}</Button>
+        <Button className="p-0 pt-1">
+          <Link className="w-full h-10 px-4 py-2" to={navActionBtn.url}>{navActionBtn.title}</Link>
+        </Button>
       </div>
     </header>
   );
