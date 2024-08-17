@@ -6,6 +6,7 @@ import { Login } from './Authentication/Login';
 import AuthLayout from './Authentication/AuthLayout';
 import Register from './Authentication/Register';
 import ResetPassword from './Authentication/ResetPassword';
+import { AuthOptions } from './Authentication/AuthOptions';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
     path: "/auth",
     element: <AuthLayout />,
     children: [
+      {
+        path: "",
+        element: <AuthOptions />
+      },
       {
         path: "login",
         element: <Login />
