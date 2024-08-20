@@ -7,6 +7,8 @@ import AuthLayout from './Authentication/AuthLayout';
 import Register from './Authentication/Register';
 import ResetPassword from './Authentication/ResetPassword';
 import { AuthOptions } from './Authentication/AuthOptions';
+import DashboardLayout from './Dashboard/DashboardLayout';
+import WriterDashboard from './Dashboard/WriterDashboard';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,32 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "/Dashboard",
+    element: <DashboardLayout />,
+    children: [
+      {
+        path: "",
+        element: <WriterDashboard />
+      },
+      {
+        path: "manage-blogs",
+        element: "asd"
+      },
+      {
+        path: "my-drafts",
+        element: "asdasd"
+      },
+      {
+        path: "bookmark",
+        element: ""
+      },
+      {
+        path: "account-settings",
+        element: ""
+      },
+    ]
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
