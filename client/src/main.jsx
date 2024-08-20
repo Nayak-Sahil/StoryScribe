@@ -9,6 +9,10 @@ import ResetPassword from './Authentication/ResetPassword';
 import { AuthOptions } from './Authentication/AuthOptions';
 import DashboardLayout from './Dashboard/DashboardLayout';
 import WriterDashboard from './Dashboard/WriterDashboard';
+import ManageBlogs from './BlogsPost/ManageBlogs';
+import MyDraft from './DraftPost/MyDraft';
+import SavedPostTable from './Bookmark/SavedPostTable';
+import AccountSettings from './AccountSettings/AccountSettings';
 
 const router = createBrowserRouter([
   {
@@ -47,19 +51,19 @@ const router = createBrowserRouter([
       },
       {
         path: "manage-blogs",
-        element: "asd"
+        element: <ManageBlogs />
       },
       {
         path: "my-drafts",
-        element: "asdasd"
+        element: <MyDraft />
       },
       {
         path: "bookmark",
-        element: ""
+        element: <SavedPostTable />
       },
       {
         path: "account-settings",
-        element: ""
+        element: <AccountSettings />
       },
     ]
   }
