@@ -28,7 +28,7 @@ const statisticsArr = [
 
 export default function WriterDashboard() {
   return (
-    <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-4">
+    <main className="flex flex-1 flex-col gap-4 p-2 md:gap-8 md:p-2">
       <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
         {statisticsArr.map((stats, idx)=>{
             return (<StatisticsCard key={idx} title={stats.title} statistics={stats.statistics} icon={stats.icon} index={idx} />)

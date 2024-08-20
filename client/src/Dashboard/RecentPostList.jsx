@@ -29,8 +29,8 @@ export default function RecentPostList({
   return (
     <Card x-chunk={`dashboard-01-chunk-${chunkNo}`}>
       <CardHeader className="flex flex-row items-center">
-        <div className="grid gap-2">
-          <CardTitle>{title}</CardTitle>
+        <div className="grid gap-1">
+          <CardTitle className="text-xl">{title}</CardTitle>
           <CardDescription>{description}</CardDescription>
         </div>
         <Button asChild size="sm" className="ml-auto gap-1">
