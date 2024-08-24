@@ -18,7 +18,7 @@ export default function Navbar() {
   }, [location]);
 
   return (
-    <header className="w-full justify-between sticky top-0 flex h-16 items-center gap-4 bg-background px-4 md:px-6 shadow-sm border border-gray-200">
+    <header className="bg-white z-10 w-full justify-between sticky top-0 flex h-16 items-center gap-4 px-4 md:px-6 shadow-sm border border-gray-200">
       <div className="order-1 flex justify-center">
         <Link
           href="#"
@@ -27,7 +27,7 @@ export default function Navbar() {
           <Logo />
         </Link>
       </div>
-      <nav className="order-2 w-full hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:justify-center md:gap-5 md:text-sm lg:gap-6">
+      <nav className="order-2 w-full hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:justify-center md:gap-5 md:text-sm lg:gap-14">
         <Link
           href="#"
           className="text-foreground transition-colors hover:text-foreground"
