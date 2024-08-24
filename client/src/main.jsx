@@ -13,11 +13,12 @@ import ManageBlogs from './BlogsPost/ManageBlogs';
 import MyDraft from './DraftPost/MyDraft';
 import SavedPostTable from './Bookmark/SavedPostTable';
 import AccountSettings from './AccountSettings/AccountSettings';
+import App from './App';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: "<h1>Welcome to StoryScribe</h1>"
+    element: <App />
   },
   {
     path: "/auth",
