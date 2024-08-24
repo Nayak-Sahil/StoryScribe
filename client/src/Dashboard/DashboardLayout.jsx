@@ -2,8 +2,10 @@ import { Link, Outlet } from "react-router-dom";
 import {
   Bell,
   Bookmark,
+  BookOpenText,
   CircleUser,
   CircleUserRound,
+  FilePlus2,
   FileStack,
   FileText,
   Home,
@@ -66,10 +68,6 @@ export default function DashboardLayout() {
             <Link href="/" className="flex items-center gap-2 font-semibold">
               <Logo />
             </Link>
-            <Button variant="outline" size="icon" className="ml-auto h-8 w-8">
-              <Bell className="h-4 w-4" />
-              <span className="sr-only">Toggle notifications</span>
-            </Button>
           </div>
           <div className="flex-1 mt-3">
             <nav className="grid items-start px-2 text-sm font-medium lg:px-4">
@@ -113,19 +111,11 @@ export default function DashboardLayout() {
               </div>
             </SheetContent>
           </Sheet>
-          <div className="w-full flex-1">
-            <form>
-              <div className="relative">
-                <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
-                <Input
-                  type="search"
-                  placeholder="Search products..."
-                  className="w-full appearance-none bg-background pl-8 shadow-none md:w-2/3 lg:w-1/3"
-                />
-              </div>
-            </form>
+          <div className="flex-1">
+            <Button className="mr-3" variant="outline"><BookOpenText className="w-4 h-4 mr-2"/> View Articles</Button>
+            <Button variant="outline"><FilePlus2 className="w-4 h-4 mr-2"/> Create Article</Button>
           </div>
-          <DropdownMenu>
+          <DropdownMenu className="">
             <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon" className="rounded-full">
                 <UserRound className="text-card-foreground h-4 w-4" />
